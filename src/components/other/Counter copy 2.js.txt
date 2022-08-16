@@ -1,0 +1,36 @@
+import { useState } from 'react';
+
+const Counter = () => {
+  const [counter1, setCounter1] = useState(0);
+  const [counter2, setCounter2] = useState(0);
+  const [counter3, setCounter3] = useState(0);
+  //   function handleIncrementWrapper(counter, setCounter) {
+  //     return function () {
+  //       setCounter(counter + 1);
+  //     };
+  //   }
+
+  function handleIncrement(counter, setCounter) {
+    setCounter(counter + 1);
+  }
+
+  return (
+    <>
+      <h1>Counter</h1>
+      <p>Counter 1 = {counter1}</p>
+      <p>Counter 2 = {counter2}</p>
+      <p>Counter 3 = {counter3}</p>
+      <button onClick={handleIncrement.bind(this, counter1, setCounter1)}>
+        Increment Counter 1
+      </button>
+      <button onClick={handleIncrement.bind(this, counter2, setCounter2)}>
+        Increment Counter 2
+      </button>
+      <button onClick={handleIncrement.bind(this, counter3, setCounter3)}>
+        Increment Counter 3
+      </button>
+    </>
+  );
+};
+
+export default Counter;
